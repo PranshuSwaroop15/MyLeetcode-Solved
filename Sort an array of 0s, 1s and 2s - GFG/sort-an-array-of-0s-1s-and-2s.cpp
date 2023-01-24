@@ -11,44 +11,73 @@ class Solution
     void sort012(int a[], int n)
     {
      
-    int count0=0,count1=0,count2=0;
+    // int count0=0,count1=0,count2=0;
     
     
-    for(int i=0;i<n;i++){
+    // for(int i=0;i<n;i++){
         
-        if(a[i]==0){
-            count0++;
-        }
-        if(a[i]==1){
+    //     if(a[i]==0){
+    //         count0++;
+    //     }
+    //     if(a[i]==1){
             
-            count1++;
-        }
+    //         count1++;
+    //     }
         
-        if(a[i]==2){
+    //     if(a[i]==2){
             
-            count2++;
+    //         count2++;
+    //     }
+        
+        
+    // }
+    
+    // for(int i=0;i<count0;i++){
+        
+    //     a[i]=0;
+    // }
+    
+    // for(int i=count0;i<n;i++){
+        
+    //     a[i]=1;
+    // }
+    
+    // for(int i=count0+count1;i<n;i++){
+        
+    //     a[i]=2;
+    // }
+    
+    // }
+    
+    int low=0;
+    int mid=0;
+    int high=n-1;
+    
+    while(mid<=high){
+        
+        switch(a[mid]){
+            
+            case 0:
+                swap(a[low],a[mid]);
+                low++;
+                mid++;
+                break;
+            case 1:
+            
+                mid++;
+                
+                break;
+                
+            case 2:
+                swap(a[mid],a[high]);
+                
+                high--;
+                
+                break;
         }
         
-        
     }
-    
-    for(int i=0;i<count0;i++){
-        
-        a[i]=0;
     }
-    
-    for(int i=count0;i<n;i++){
-        
-        a[i]=1;
-    }
-    
-    for(int i=count0+count1;i<n;i++){
-        
-        a[i]=2;
-    }
-    
-    }
-    
 };
 
 //{ Driver Code Starts.
