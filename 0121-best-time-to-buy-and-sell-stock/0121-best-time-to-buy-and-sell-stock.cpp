@@ -6,7 +6,7 @@ public:
     int max_profit=0;
 
     int size=prices.size();
-    for(int i=0;i<size;i++){
+    for(int i=1;i<size;i++){
 
         min_so_far=min(min_so_far,prices[i]);
         int profit=prices[i]-min_so_far;
