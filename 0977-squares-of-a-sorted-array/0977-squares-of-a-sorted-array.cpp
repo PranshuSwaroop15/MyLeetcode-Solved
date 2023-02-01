@@ -8,7 +8,26 @@ public:
         nums[i]=nums[i]*nums[i];
     }
 
-    sort(nums.begin(),nums.end());
-    return nums;
+    int i=0,j=n-1;
+    
+    int k=n-1;
+    vector<int>ans(n);
+    while(i<=j){
+
+        if(nums[i]>nums[j]){
+            
+            ans[k]=nums[i];
+            i++;
+            k--;
+        }
+        else{
+            
+            ans[k]=nums[j];
+           j--; 
+           k--;
+        }
+       
+    }
+    return ans;
     }
 };
