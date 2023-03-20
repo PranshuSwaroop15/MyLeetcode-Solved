@@ -13,15 +13,16 @@ public:
     
     ListNode* reverse(ListNode* head){
         
-        ListNode* prev=NULL;
-        
         ListNode* curr=head;
+        
+        ListNode* prev=NULL;
         
         ListNode* nxt=NULL;
         
-        while(curr){
+        while(curr)
+        {
+            nxt=curr->next;
             
-             nxt=curr->next;
             curr->next=prev;
             
             prev=curr;
@@ -33,9 +34,8 @@ public:
     }
     void reorderList(ListNode* head) {
         
-        
+//         finding the mid element
         ListNode* slow=head;
-        
         ListNode* fast=head->next;
         
         while(fast && fast->next)
@@ -45,27 +45,34 @@ public:
             fast=fast->next->next;
         }
         
+//         reverse the list
+        
         ListNode* second=reverse(slow->next);
         
-        
         slow->next=NULL;
-            
+        
         ListNode* first=head;
         
         
-        while(second){
-            
+        while(second)
+        {
             ListNode* temp1=first->next;
             
             ListNode* temp2=second->next;
             
             first->next=second;
-            
             second->next=temp1;
+            
             
             first=temp1;
             
             second=temp2;
+            
+            
+            
         }
+        
+//         
+        
     }
 };
